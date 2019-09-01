@@ -66,7 +66,9 @@ export default class Contacts extends React.Component {
             </tr>
           </tbody>
         </Table>
-        : "Loading..."
+        : this.state.error ?
+          "Unable to load contacts"
+          : "Loading..."
     );
   }
 }
