@@ -5,7 +5,8 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem } from 'reactstrap';
+  NavItem
+} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 export default class NavBar extends React.Component {
@@ -23,6 +24,7 @@ export default class NavBar extends React.Component {
   }
 
   render() {
+    const id = localStorage.getItem('id');
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -30,11 +32,13 @@ export default class NavBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to="/contacts">My Contacts</Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/">Logout</Link>
+              {id ?
+                <NavItem>
+                  <Link to="/contacts">My Contacts</Link>
+                </NavItem>
+                : null}
+              <NavItem className="ml-2">
+                <Link to={"/"}>{id ? "Logout" : "Login"}</Link>
               </NavItem>
             </Nav>
           </Collapse>

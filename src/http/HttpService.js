@@ -20,8 +20,25 @@ class HttpService {
       body: JSON.stringify(content)
     });
   }
+  
+  put(url, content) {
+    return fetch(root + url, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(content)
+    });
+  }
 
-  //put
+  delete(url) {
+    return fetch(root + url, {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
 }
 
 const handleResponse = response => {

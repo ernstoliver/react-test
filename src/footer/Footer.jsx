@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="fixed-bottom">  
       <Navbar color="dark" dark>
         <Container>
-          <NavbarBrand>Footer</NavbarBrand>
+          <NavbarBrand>Copyright</NavbarBrand>
         </Container>
       </Navbar>
     </div>
